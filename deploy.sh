@@ -66,7 +66,6 @@ ln    -vfs ${PWD}/look/.Xdefaults           ~/.Xdefaults
 ln    -vfs ${PWD}/look/Trolltech.conf       ~/.config/Trolltech.conf
 
 chmod +x   ${PWD}/scripts/*
-
 for script in ${PWD}/scripts/*; do
     sudo ln -vfs "$script" /bin/${script##*/}
     sudo chown -v `whoami` /bin/${script##*/}
@@ -84,6 +83,7 @@ sudo ln    -vfs ${PWD}/X11/*                /etc/X11/xorg.conf.d/
 sudo ln    -vfs ${PWD}/apt/apt.conf.d/*     /etc/apt/apt.conf.d/
 
 sudo ln    -vfs ${PWD}/udev/rules.d/*       /etc/udev/rules.d/
+sudo udevadm control --reload-rules
 
 sudo cp -vf ${PWD}/systemd/system/* /lib/systemd/system/
 sudo systemctl enable backlight-workaround
