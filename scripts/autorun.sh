@@ -7,3 +7,4 @@ deluge &
 cbatticon &
 nm-applet &
 xset b off &
+feh --bg-scale 
