@@ -11,15 +11,15 @@ do_compress() {
 }
 
 compress_dir_impl() {
-    for entry in "${1}"/*."${extension}"; do
-        [[ -f "${entry}" ]] && do_compress "${entry}"
+    for iter in "${1}"/*."${extension}"; do
+        [[ -f "${iter}" ]] && do_compress "${iter}"
     done
 }
 
 recursive_compress_dir_impl() {
     compress_dir_impl "${1}"
-    for entry in "${1}"/*; do
-        [[ -d "${entry}" ]] && recursive_compress_dir_impl "${entry}"
+    for iter in "${1}"/*; do
+        [[ -d "${iter}" ]] && recursive_compress_dir_impl "${iter}"
     done
 }
 
