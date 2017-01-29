@@ -26,6 +26,7 @@ recursive_compress_dir_impl() {
 compress() {
     [[ -f "${entry}" ]] && do_compress "${entry}"
     [[ -d "${entry}" ]] && ${compress_dir} "${entry}"
+    ${purge} "${entry}"
 }
 
 cleanup_impl() {
@@ -36,16 +37,26 @@ dummy_cleanup_impl() {
     true
 }
 
+purge_impl() {
+    find "${1}" -type f ! -name "*.${artifact_extension}" -delete -print
+}
+
+dummy_purge_impl() {
+    true
+}
+
 
 extension=flac
+artifact_extension=mp3
 compress_dir=compress_dir_impl
 cleanup=dummy_cleanup_impl
+purge=dummy_purge_impl
 compressor=lame
 compress_options="-V0 -b320"
 
 
 OPTIND=1
-while getopts "f:r:ce:" opt; do
+while getopts "f:r:cpe:" opt; do
     case ${opt} in
     f)
         entry="${OPTARG}"
@@ -56,6 +67,9 @@ while getopts "f:r:ce:" opt; do
         ;;
     c)
         cleanup=cleanup_impl
+        ;;
+    p)
+        purge=purge_impl
         ;;
     e)
         extension="${OPTARG}"
