@@ -10,41 +10,36 @@ do_compress() {
     ${cleanup} "${1}"
 }
 
-compress_dir() {
+compress_dir_impl() {
     for entry in "${1}"/*."${extension}"; do
         [[ -f "${entry}" ]] && do_compress "${entry}"
     done
 }
 
-simple_compress() {
-    [[ -f "${entry}" ]] && do_compress "${entry}"
-    [[ -d "${entry}" ]] && compress_dir "${entry}"
-}
-
-compress_dir_r() {
-    compress_dir "${1}"
+recursive_compress_dir_impl() {
+    compress_dir_impl "${1}"
     for entry in "${1}"/*; do
-        [[ -d "${entry}" ]] && compress_dir_r "${entry}"
+        [[ -d "${entry}" ]] && recursive_compress_dir_impl "${entry}"
     done
 }
 
-recursive_compress() {
+compress() {
     [[ -f "${entry}" ]] && do_compress "${entry}"
-    [[ -d "${entry}" ]] && compress_dir_r "${entry}"
+    [[ -d "${entry}" ]] && ${compress_dir} "${entry}"
 }
 
-dummy_cleanup() {
-    true
-}
-
-soft_cleanup() {
+cleanup_impl() {
     rm -vf "${1}"
+}
+
+dummy_cleanup_impl() {
+    true
 }
 
 
 extension=flac
-compress=simple_compress
-cleanup=dummy_cleanup
+compress_dir=compress_dir_impl
+cleanup=dummy_cleanup_impl
 compressor=lame
 compress_options="-V0 -b320"
 
@@ -56,11 +51,11 @@ while getopts "f:r:ce:" opt; do
         entry="${OPTARG}"
         ;;
     r)
-        compress=recursive_compress
+        compress_dir=recursive_compress_dir_impl
         entry="${OPTARG}"
         ;;
     c)
-        cleanup=soft_cleanup
+        cleanup=cleanup_impl
         ;;
     e)
         extension="${OPTARG}"
@@ -70,5 +65,5 @@ done
 
 [[ -z "${entry}" ]] && exit_failure "Please supply entry"
 
-${compress} "${entry}"
+compress "${entry}"
 
