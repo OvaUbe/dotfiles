@@ -1,6 +1,6 @@
 #!/bin/bash
 
-feh --bg-scale ~/dotfiles/look/Wallpapers/solid-2A2826-1920x1080.jpg &
+feh --bg-scale ~/dotfiles/look/Wallpapers/aoi-bungaku-1.png
 telegram &
 deluge &
 nm-applet &
