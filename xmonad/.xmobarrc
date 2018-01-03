@@ -1,4 +1,4 @@
-Config { 
+Config {
 
    -- appearance
      font =         "xft:Fira Mono:size=9:bold:antialias=true"
@@ -11,7 +11,8 @@ Config {
    -- layout
    , sepChar =  "%"   -- delineator between plugin names and straight text
    , alignSep = "}{"  -- separator between left-right alignment
-   , template = "| %kbd% | %date% | %vol% | %battery% | %StdinReader% }{"
+
+   , template = "| %kbd% | %date% | %vol% | %battery% | %screencapture% | %StdinReader% }{"
 
    -- general behavior
    , lowerOnStart =     True    -- send to bottom of window stack on start
@@ -21,9 +22,9 @@ Config {
    , pickBroadest =     False   -- choose widest display (multi-monitor)
    , persistent =       True    -- enable/disable hiding (True = disabled)
 
-   , commands = 
-        [ 
-        -- time and date indicator 
+   , commands =
+        [
+        -- time and date indicator
           Run Date           "<fc=#ABABAB>%F (%a) %T</fc>" "date" 10
 
         -- volume
@@ -31,6 +32,9 @@ Config {
 
         -- battery
         , Run PipeReader "/tmp/.battery-pipe" "battery"
+
+        -- screencapture
+        , Run PipeReader "/tmp/.screencapture-pipe" "screencapture"
 
         -- keyboard layout indicator
         , Run Kbd            [ ("us", "<fc=#429942>US</fc>"),

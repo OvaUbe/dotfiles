@@ -1,3 +1,4 @@
 export BSPWM_PANEL_HEIGHT=24
 export BSPWM_VOLUME_FIFO=/tmp/.volume-pipe 
 export BSPWM_BATTERY_FIFO=/tmp/.battery-pipe
+export BSPWM_SCREENCAPTURE_FIFO=/tmp/.screencapture-pipe
