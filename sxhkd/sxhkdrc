@@ -52,7 +52,7 @@ super + g
 
 # Fold/unfold bar
 super + {_,shift + } b
-	bspc config top_padding {0,${BSPWM_PANEL_HEIGHT}}
+	bspc config top_padding {0,$(cat ~/.global-state/BSPWM_PANEL_HEIGHT)}
 
 # Rotate tree
 super + n
