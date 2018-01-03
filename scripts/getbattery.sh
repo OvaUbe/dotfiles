@@ -29,9 +29,4 @@ get_status() {
    esac
 }
 
-while true; do
-    echo -e "${blue}{${end} $(get_charge) $(get_status) ${blue}]${end}"
-    sleep 3
-done
-
-exit 0
+echo -e "${blue}{${end} $(get_charge) $(get_status) ${blue}]${end}"
