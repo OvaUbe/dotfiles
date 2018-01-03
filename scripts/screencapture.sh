@@ -1,7 +1,7 @@
 #!/bin/bash
 
 record_pid_variable=~/.global-state/SCREENCAPTURE_RECORD_PID
-fifo=$(cat ~/.global-state/SCREENCAPTURE_FIFO)
+fifo=$(cat ~/.global-state/SCREENCAPTURE_STATUS_FIFO)
 record_pid=$(cat ${record_pid_variable})
 
 if [[ -n ${record_pid} ]]; then

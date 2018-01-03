@@ -1,6 +1,6 @@
 #!/bin/bash
 
-screencapture_fifo=$(cat ~/.global-state/SCREENCAPTURE_FIFO)
+screencapture_fifo=$(cat ~/.global-state/SCREENCAPTURE_STATUS_FIFO)
 
 format() {
     if [[ $1 == "1" ]]; then
