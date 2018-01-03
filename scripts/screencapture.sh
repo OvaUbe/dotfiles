@@ -8,7 +8,7 @@ if [[ -n ${record_pid} ]]; then
     kill -SIGTERM ${record_pid}
 
     echo "" > ${record_pid_variable}
-    echo "" > ${fifo}
+    echo "0" > ${fifo}
 
     exit 0
 fi
@@ -28,4 +28,4 @@ ffmpeg -video_size ${screen_resolution} \
 
 record_pid=$(echo $!)
 echo ${record_pid} > ${record_pid_variable}
-echo "R" > ${fifo}
+echo "1" > ${fifo}

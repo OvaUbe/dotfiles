@@ -52,6 +52,11 @@ sudo ln    -vfs ${PWD}/vim/.vimrc           /root/.vimrc
 sudo ln    -vfs ${PWD}/vim/colors/*         /root/.vim/colors/
 
 ln    -vfs ${PWD}/xmonad/.xmobarrc          ~/.xmobarrc
+mkdir -v ~/.xmonad
+chmod +x   ${PWD}/xmonad/status-*.sh
+for script in ${PWD}/xmonad/status-*.sh; do
+    ln -vfs "$script" ~/.xmonad/${script##*/}
+done
 
 mkdir -v   ~/.config/
 

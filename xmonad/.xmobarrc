@@ -24,23 +24,13 @@ Config {
 
    , commands =
         [
-        -- time and date indicator
-          Run Date           "<fc=#ABABAB>%F (%a) %T</fc>" "date" 10
-
-        -- volume
-        , Run PipeReader "/tmp/.volume-pipe" "vol"
-
-        -- battery
-        , Run PipeReader "/tmp/.battery-pipe" "battery"
-
-        -- screencapture
-        , Run PipeReader "/tmp/.screencapture-pipe" "screencapture"
-
-        -- keyboard layout indicator
-        , Run Kbd            [ ("us", "<fc=#429942>US</fc>"),
-                               ("ru", "<fc=#781A0F>RU</fc>")
-                             ]
-        -- status
-        , Run StdinReader
+            Run CommandReader "~/.xmonad/status-date.sh" "date",
+            Run CommandReader "~/.xmonad/status-volume.sh" "vol",
+            Run CommandReader "~/.xmonad/status-battery.sh" "battery",
+            Run CommandReader "~/.xmonad/status-screencapture.sh" "screencapture",
+            Run Kbd [ ("us", "<fc=#429942>US</fc>"),
+                      ("ru", "<fc=#781A0F>RU</fc>")
+                    ],
+            Run StdinReader
         ]
    }
