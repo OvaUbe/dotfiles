@@ -27,10 +27,10 @@ Config {
             Run Kbd [ ("us", "<fc=#429942>US</fc>"),
                       ("ru", "<fc=#781A0F>RU</fc>")
                     ],
-            Run CommandReader "~/.xmonad/status-date.sh" "date",
-            Run CommandReader "~/.xmonad/status-volume.sh" "vol",
-            Run CommandReader "~/.xmonad/status-battery.sh" "battery",
-            Run CommandReader "~/.xmonad/status-screencapture.sh" "screencapture",
-            Run CommandReader "~/.xmonad/status-windowmanager.sh" "windowmanager"
+            Run CommandReader "~/.xmobar/status-date.sh" "date",
+            Run CommandReader "~/.xmobar/status-volume.sh" "vol",
+            Run CommandReader "~/.xmobar/status-battery.sh" "battery",
+            Run CommandReader "~/.xmobar/status-screencapture.sh" "screencapture",
+            Run CommandReader "~/.xmobar/status-windowmanager.sh" "windowmanager"
         ]
    }
