@@ -1,9 +1,15 @@
 #!/bin/bash
 
-record_pid_variable="SCREENCAPTURE_RECORD_PID"
+record_pid_variable=~/.global-state/SCREENCAPTURE_RECORD_PID
+fifo=$(cat ~/.global-state/SCREENCAPTURE_FIFO)
+record_pid=$(cat ${record_pid_variable})
 
-if [[ ${1} == "-k" ]]; then
-    kill -SIGTERM $(cat ~/.global-state/${record_pid_variable})
+if [[ -n ${record_pid} ]]; then
+    kill -SIGTERM ${record_pid}
+
+    echo "" > ${record_pid_variable}
+    echo "" > ${fifo}
+
     exit 0
 fi
 
@@ -21,4 +27,5 @@ ffmpeg -video_size ${screen_resolution} \
        ~/scrots/${filename} &
 
 record_pid=$(echo $!)
-echo ${record_pid} > ~/.global-state/${record_pid_variable}
+echo ${record_pid} > ${record_pid_variable}
+echo "R" > ${fifo}
