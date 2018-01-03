@@ -90,3 +90,5 @@ sudo systemctl enable backlight-workaround
 sudo systemctl enable NetworkManager
 # Ad-hoc for broken debian sddm service
 sudo ln -vfs /lib/systemd/system/sddm.service /etc/systemd/system/
+
+mkdir -v ~/.global-state
