@@ -12,7 +12,7 @@ Config {
    , sepChar =  "%"   -- delineator between plugin names and straight text
    , alignSep = "}{"  -- separator between left-right alignment
 
-   , template = "| %kbd% | %date% | %vol% | %battery% | %screencapture% | %StdinReader% }{"
+   , template = "| %kbd% | %date% | %vol% | %battery% | %screencapture% | %windowmanager% }{"
 
    -- general behavior
    , lowerOnStart =     True    -- send to bottom of window stack on start
@@ -24,13 +24,13 @@ Config {
 
    , commands =
         [
+            Run Kbd [ ("us", "<fc=#429942>US</fc>"),
+                      ("ru", "<fc=#781A0F>RU</fc>")
+                    ],
             Run CommandReader "~/.xmonad/status-date.sh" "date",
             Run CommandReader "~/.xmonad/status-volume.sh" "vol",
             Run CommandReader "~/.xmonad/status-battery.sh" "battery",
             Run CommandReader "~/.xmonad/status-screencapture.sh" "screencapture",
-            Run Kbd [ ("us", "<fc=#429942>US</fc>"),
-                      ("ru", "<fc=#781A0F>RU</fc>")
-                    ],
-            Run StdinReader
+            Run CommandReader "~/.xmonad/status-windowmanager.sh" "windowmanager"
         ]
    }
