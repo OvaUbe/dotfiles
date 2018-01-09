@@ -3,7 +3,7 @@
 esp="/boot"
 image_prefix="vmlinuz-"
 initrd_prefix="initrd.img-"
-boot_options="root=/dev/sda5 resume=/dev/sda2 loglevel=3 rw"
+boot_options="root=/dev/sda8 resume=/dev/sda6 loglevel=3 rw"
 
 make_entry() {
     version=${1}
