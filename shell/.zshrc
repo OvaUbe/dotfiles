@@ -12,3 +12,6 @@ alias cp='cp -v'
 alias mv='mv -v'
 alias rm='rm -v'
 alias mkdir='mkdir -pv'
+
+# OPAM configuration
+. /home/ovaube/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
