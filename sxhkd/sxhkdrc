@@ -3,11 +3,11 @@
 #
 
 # Brightness control
-super + {F2,F3}
+super + {F5,F6}
 	backlight.sh -a {-,+}3
 
 # Volume control
-super + {F7,F8}
+super + {F2,F3}
 	amixer -D default set Master 2%{-,+}
 
 # Print screen
