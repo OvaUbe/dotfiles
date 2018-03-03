@@ -10,8 +10,12 @@ while getopts "r:g:b:e:" opt; do
     esac
 done
 
+choose_battery() {
+    acpi --battery | tail -n 1
+}
+
 get_charge() {
-    charge=`acpi --battery | head -n 1 | awk '{print $4}' | sed 's/%,\?$//'`
+    charge=`choose_battery | awk '{print $4}' | sed 's/%,\?$//'`
     if [ $charge -ge 15 ]; then
         echo "${green}${charge}%${end}"
     else
@@ -20,7 +24,7 @@ get_charge() {
 }
 
 get_status() {
-   charging=`acpi --battery | head -n 1 | awk '{print $3}' | sed 's/,$//'`
+   charging=`choose_battery | awk '{print $3}' | sed 's/,$//'`
    case $charging in
        "Charging") echo "${green}↑${end}" ;;
        "Full") echo "${green}F${end}" ;;
