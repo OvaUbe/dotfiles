@@ -1,75 +1,301 @@
-runtime! archlinux.vim
+function! TrySetCursorPrefs()
+    if &term =~ 'xterm\|.*rxvt.*'
+        let cursor_color = "\033]12;white\x7"
+        let cursor_shape = "\033[1 q"
+        let insert_cursor_shape = "\033[5 q"
+
+        let &t_SI = cursor_color
+        let &t_EI = cursor_color
+
+        let &t_SI .= insert_cursor_shape
+        let &t_EI .= cursor_shape
+
+        autocmd VimLeave * silent !echo -e "\033]12;grey\x7 \033[2 q"
+    endif
+endfunction
+
+function! ToggleColumnHighlight()
+    if (g:column_highlight == 0)
+        let g:column_highlight = 1
+        execute "set colorcolumn=".g:column_number_highlight
+        execute "set textwidth=".g:column_number_highlight
+    else
+        let g:column_highlight = 0
+        set colorcolumn=0
+        set textwidth=0
+    endif
+endfunction
 
 set wm=0
-set nu
 set nowrap
 
-" Tabs section
-set tabstop=8 
-set softtabstop=0 
-set expandtab 
-set shiftwidth=4 
-set smarttab
-
-" Show some invisible symbols
-set list
-set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
-
-" New line tabs
-set si
-
-" C-style tabs
-set cin
-
-" Smart search
+set showmatch
+set hlsearch
 set incsearch
+set number
+set mouse=a
+set laststatus=2
+set backspace=2
 
-" Enable wildmenu
+set foldmethod=syntax
+
+set background=dark
+colorscheme wombat256mod
+call TrySetCursorPrefs()
+
+set shiftwidth=4
+set tabstop=4
+set softtabstop=4
+set expandtab
+
+set modeline
+set modelines=5
+set foldlevel=5
+
+set exrc
+set secure
+
 set wildmenu
 set wildmode=list:longest,full
 
-" Pleasant backspace
-set backspace=2
+set undofile
+set undodir=$HOME/.vim/undo
+set undolevels=1000
+set undoreload=10000
 
-" Mouse support in console
-set mouse=a
+set list
+set listchars=tab:>-,trail:~,extends:>,precedes:<
 
-"""""""""""""""""""""""""""""""""""""""""""
-"Colors/fonts
-"""""""""""""""""""""""""""""""""""""""""""
+" Note
+set completeopt=menuone,noselect
 
-syntax enable
-colorscheme wombat256mod
+" Todo: Move to ftdetect
+au BufRead,BufNewFile *.c,*.cpp,*.cxx,*.h,*.hpp,*.hxx set filetype=cpp.doxygen
+au BufRead,BufNewFile *.qml set filetype=qml
+au BufRead,BufNewFile *.tex set fenc=utf-8 ts=2 sw=2 sts=2 et fdm=indent foldlevel=20
+au FileType gitcommit set cc=72
+au FileType qf nnoremap <buffer> <C-T> <C-W><CR><C-W>T
+au FileType qf set cc=0
+au! Syntax qml source $HOME/.vim/syntax/qml.vim
 
-" ## added by OPAM user-setup for vim / base ## 93ee63e278bdfc07d1139a748ed3fff2 ## you can edit, but keep this line
-let s:opam_share_dir = system("opam config var share")
-let s:opam_share_dir = substitute(s:opam_share_dir, '[\r\n]*$', '', '')
+let g:column_highlight = 1
+let g:column_number_highlight = 72
+nmap <C-B><C-B> :call ToggleColumnHighlight()<CR>
 
-let s:opam_configuration = {}
+nnoremap j gj
+nnoremap k gk
+nnoremap <leader>w <C-w>
+nnoremap <silent> <C-n> :nohl<CR>
 
-function! OpamConfOcpIndent()
-  execute "set rtp^=" . s:opam_share_dir . "/ocp-indent/vim"
+vmap <C-c> "+y
+vmap <C-v> c<ESC>"+p
+imap <C-v> <ESC>"+pa
+
+nnoremap <C-h> :tabprevious<CR>
+nnoremap <C-l> :tabnext<CR>
+nnoremap <leader>z :-tabmove<CR>
+nnoremap <leader>x :+tabmove<CR>
+
+inoremap <expr><C-n> pumvisible() ? '<C-n>' : '<C-X><C-U>'
+inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
+inoremap <silent><CR> <C-r>=<SID>my_cr_function()<CR>
+function! s:my_cr_function()
+	return pumvisible() ? "\<C-y>" : "\<CR>"
 endfunction
-let s:opam_configuration['ocp-indent'] = function('OpamConfOcpIndent')
 
-function! OpamConfOcpIndex()
-  execute "set rtp+=" . s:opam_share_dir . "/ocp-index/vim"
-endfunction
-let s:opam_configuration['ocp-index'] = function('OpamConfOcpIndex')
 
-function! OpamConfMerlin()
-  let l:dir = s:opam_share_dir . "/merlin/vim"
-  execute "set rtp+=" . l:dir
-endfunction
-let s:opam_configuration['merlin'] = function('OpamConfMerlin')
+" VimPlug
+call plug#begin('~/.vim/plugged')
 
-let s:opam_packages = ["ocp-indent", "ocp-index", "merlin"]
-let s:opam_check_cmdline = ["opam list --installed --short --safe --color=never"] + s:opam_packages
-let s:opam_available_tools = split(system(join(s:opam_check_cmdline)))
-for tool in s:opam_packages
-  " Respect package order (merlin should be after ocp-index)
-  if count(s:opam_available_tools, tool) > 0
-    call s:opam_configuration[tool]()
-  endif
-endfor
-" ## end of OPAM user-setup addition for vim / base ## keep this line
+Plug 'vim-scripts/a.vim'
+Plug 'mileszs/ack.vim'
+Plug 'bkad/CamelCaseMotion'
+Plug 'junegunn/fzf', { 'do': './install --bin' }
+Plug 'junegunn/fzf.vim'
+Plug 'davidhalter/jedi-vim'
+Plug 'scrooloose/nerdtree'
+Plug 'Shougo/neocomplete.vim'
+Plug 'vim-syntastic/syntastic'
+Plug 'tpope/vim-abolish'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'ntpeters/vim-better-whitespace'
+Plug 'rhysd/vim-clang-format'
+Plug 'tpope/vim-commentary'
+Plug 'octol/vim-cpp-enhanced-highlight'
+Plug 'tpope/vim-dispatch'
+Plug 'easymotion/vim-easymotion'
+Plug 'tpope/vim-fugitive'
+Plug 'kana/vim-operator-user'
+Plug 'lyuts/vim-rtags'
+Plug 'altercation/vim-colors-solarized', { 'do': 'cp -rf ./colors ~/.vim/' }
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-unimpaired'
+Plug 'Shougo/vimproc.vim', {'do' : 'make'}
+Plug 'majutsushi/tagbar'
+Plug 'SirVer/ultisnips'
+Plug 'google/yapf', { 'rtp': 'plugins/vim', 'for': 'python' }
+
+call plug#end()
+
+
+" a
+nmap <C-M><C-M> :A<CR>
+
+
+" ack
+if executable('rg')
+	let g:ackprg = 'rg --vimgrep --no-heading'
+endif
+let g:ack_use_dispatch = 1
+nnoremap <leader>s :Ack -w <C-r><C-w><CR>
+
+
+" CamelCaseMotion
+call camelcasemotion#CreateMotionMappings(',')
+
+
+" fzf
+let g:fzf_layout = { 'down': '~30%' }
+nmap <leader>b :Buffers<cr>
+nmap <leader>f :FZF<cr>
+
+
+" jedi
+let g:jedi#auto_vim_configuration = 0
+let g:jedi#popup_on_dot = 0
+let g:jedi#popup_select_first = 0
+let g:jedi#show_call_signatures = "1"
+let g:jedi#goto_command = "<leader>rj"
+let g:jedi#goto_assignments_command = ""
+let g:jedi#goto_definitions_command = ""
+let g:jedi#documentation_command = "<leader>ri"
+let g:jedi#usages_command = "<leader>rf"
+let g:jedi#completions_command = ""
+let g:jedi#rename_command = "<leader>rw"
+let g:jedi#completions_enabled = 0
+let g:jedi#smart_auto_mappings = 0
+
+au FileType python setlocal omnifunc=jedi#completions
+
+
+" NerdTree
+map <leader>e :NERDTreeToggle<CR>
+map <leader>t :NERDTreeFind<CR>
+
+
+" NeoComplete
+let g:neocomplete#enable_at_startup = 1
+let g:neocomplete#enable_smart_case = 1
+let g:neocomplete#sources#syntax#min_keyword_length = 2
+let g:neocomplete#auto_completion_start_length = 2
+let g:neocomplete#min_keyword_length = 4
+let g:neocomplete#sources#dictionary#dictionaries = {'default' : '', 'vimshell' : $HOME.'/.vimshell_hist'}
+
+if !exists('g:neocomplete#keyword_patterns')
+	let g:neocomplete#keyword_patterns = {}
+endif
+let g:neocomplete#keyword_patterns['default'] = '\h\w*'
+
+if !exists('g:neocomplete#sources#omni#input_patterns')
+	let g:neocomplete#sources#omni#input_patterns = {}
+endif
+let g:neocomplete#sources#omni#input_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\)\|\h\w*::'
+if !exists('g:neocomplete#force_omni_input_patterns')
+	let g:neocomplete#force_omni_input_patterns = {}
+endif
+let g:neocomplete#force_omni_input_patterns.python = '\%([^. \t]\.\|^\s*@\|^\s*from\s.\+import \|^\s*from \|^\s*import \)\w*'
+if !exists('g:neocomplete#delimiter_patterns')
+	let g:neocomplete#delimiter_patterns= {}
+endif
+if !exists('g:neocomplete#sources')
+	let g:neocomplete#sources = {}
+endif
+let g:neocomplete#sources.cpp = ['omni', 'UltiSnips']
+let g:neocomplete#delimiter_patterns.cpp = ['::', '.', '->']
+
+inoremap <expr><C-g> neocomplete#undo_completion()
+
+
+" syntastic
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 0
+let g:syntastic_auto_loc_list = 0
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
+let g:syntastic_python_checkers = ['flake8']
+
+nnoremap <Leader>mc :SyntasticCheck<CR>
+nnoremap <Leader>me :Errors<CR>
+
+
+" Tagbar
+let g:tagbar_left = 1
+let g:tagbar_sort = 0
+nmap <leader>q :TagbarToggle<CR>
+
+
+" vim-airlane
+let g:airline_powerline_fonts=1
+let g:airline_theme='solarized'
+let g:airline#extensions#tabline#enabled=1
+let g:airline#extensions#tabline#show_buffers = 0
+let g:airline#extensions#tabline#show_tab_nr = 0
+let g:airline#extensions#tabline#show_tab_type = 0
+let g:airline#extensions#tabline#fnamemod=':t'
+let g:airline#extensions#whitespace#mixed_indent_algo = 2
+let g:airline#extensions#whitespace#checks = [ 'indent', 'mixed-indent-file' ]
+
+if !exists('g:airline_symbols')
+	let g:airline_symbols = {}
+endif
+let g:airline_symbols.whitespace = 'Ξ'
+let g:airline_symbols.linenr = ''
+let g:airline_symbols.linenr = 'Ξ'
+
+
+
+" vim-better-whitespace
+autocmd BufWritePre * StripWhitespace
+
+
+" vim-commentary
+au FileType cpp.doxygen setlocal commentstring=//\ %s
+au FileType octave setlocal commentstring=#\ %s
+xmap <leader>c  <Plug>Commentary
+nmap <leader>c  <Plug>Commentary
+omap <leader>c  <Plug>Commentary
+nmap <leader>cc <Plug>CommentaryLine
+nmap <leader>cu <Plug>Commentary<Plug>Commentary
+
+
+" vim-clang-format
+au FileType cpp.doxygen nnoremap <buffer> <Leader>mf :<C-u>ClangFormat<CR>
+au FileType cpp.doxygen vnoremap <buffer> <Leader>mf :ClangFormat<CR>
+let g:clang_format#detect_style_file = 1
+
+
+" vim-fugitive
+nnoremap <Leader>gb :Gblame<CR>
+nnoremap <Leader>gd :Gvdiff<CR>
+
+
+" vim-rtags
+let g:rtagsMinCharsForCommandCompletion = 1
+au FileType cpp.doxygen setlocal omnifunc=RtagsCompleteFunc
+
+
+" ultisnips
+set runtimepath+=~/.vim/snippets
+
+let g:UltiSnipsExpandTrigger="<C-t>"
+let g:UltiSnipsJumpForwardTrigger="<C-j>"
+let g:UltiSnipsJumpBackwardTrigger="<C-k>"
+
+
+" yapf
+au FileType python nnoremap <buffer> <leader>mf :call yapf#YAPF()<cr>
