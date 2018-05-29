@@ -196,7 +196,7 @@ endif
 if !exists('g:neocomplete#sources')
 	let g:neocomplete#sources = {}
 endif
-let g:neocomplete#sources.cpp = ['omni', 'UltiSnips']
+let g:neocomplete#sources.cpp = ['omni']
 let g:neocomplete#delimiter_patterns.cpp = ['::', '.', '->']
 
 inoremap <expr><C-g> neocomplete#undo_completion()
