@@ -121,7 +121,6 @@ Plug 'easymotion/vim-easymotion'
 Plug 'tpope/vim-fugitive'
 Plug 'kana/vim-operator-user'
 Plug 'lyuts/vim-rtags'
-Plug 'altercation/vim-colors-solarized', { 'do': 'cp -rf ./colors ~/.vim/' }
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
 Plug 'Shougo/vimproc.vim', {'do' : 'make'}
