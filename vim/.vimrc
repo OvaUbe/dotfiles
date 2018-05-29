@@ -103,7 +103,6 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'vim-scripts/a.vim'
 Plug 'mileszs/ack.vim'
-Plug 'bkad/CamelCaseMotion'
 Plug 'junegunn/fzf', { 'do': './install --bin' }
 Plug 'junegunn/fzf.vim'
 Plug 'davidhalter/jedi-vim'
@@ -113,18 +112,15 @@ Plug 'vim-syntastic/syntastic'
 Plug 'tpope/vim-abolish'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'ntpeters/vim-better-whitespace'
 Plug 'rhysd/vim-clang-format'
 Plug 'tpope/vim-commentary'
 Plug 'octol/vim-cpp-enhanced-highlight'
-Plug 'tpope/vim-dispatch'
 Plug 'easymotion/vim-easymotion'
 Plug 'tpope/vim-fugitive'
 Plug 'kana/vim-operator-user'
 Plug 'lyuts/vim-rtags'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
-Plug 'Shougo/vimproc.vim', {'do' : 'make'}
 Plug 'majutsushi/tagbar'
 Plug 'google/yapf', { 'rtp': 'plugins/vim', 'for': 'python' }
 
@@ -141,10 +137,6 @@ if executable('rg')
 endif
 let g:ack_use_dispatch = 1
 nnoremap <leader>s :Ack -w <C-r><C-w><CR>
-
-
-" CamelCaseMotion
-call camelcasemotion#CreateMotionMappings(',')
 
 
 " fzf
@@ -248,11 +240,6 @@ endif
 let g:airline_symbols.whitespace = 'Ξ'
 let g:airline_symbols.linenr = ''
 let g:airline_symbols.linenr = 'Ξ'
-
-
-
-" vim-better-whitespace
-autocmd BufWritePre * StripWhitespace
 
 
 " vim-commentary
