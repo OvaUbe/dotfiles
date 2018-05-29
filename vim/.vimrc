@@ -126,7 +126,6 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
 Plug 'Shougo/vimproc.vim', {'do' : 'make'}
 Plug 'majutsushi/tagbar'
-Plug 'SirVer/ultisnips'
 Plug 'google/yapf', { 'rtp': 'plugins/vim', 'for': 'python' }
 
 call plug#end()
@@ -280,14 +279,6 @@ nnoremap <Leader>gd :Gvdiff<CR>
 " vim-rtags
 let g:rtagsMinCharsForCommandCompletion = 1
 au FileType cpp.doxygen setlocal omnifunc=RtagsCompleteFunc
-
-
-" ultisnips
-set runtimepath+=~/.vim/snippets
-
-let g:UltiSnipsExpandTrigger="<C-t>"
-let g:UltiSnipsJumpForwardTrigger="<C-j>"
-let g:UltiSnipsJumpBackwardTrigger="<C-k>"
 
 
 " yapf
