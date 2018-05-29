@@ -47,9 +47,11 @@ ln    -vfs ${PWD}/shell/.profile            ~/.profile
 mkdir -vp  ~/.vim/colors/
 mkdir -vp  ~/.vim/ftdetect/
 mkdir -vp  ~/.vim/syntax/
+mkdir -vp  ~/.vim/ftplugin/
 ln    -vfs ${PWD}/vim/.vimrc                ~/.vimrc
 ln    -vfs ${PWD}/vim/colors/*              ~/.vim/colors/
 ln    -vfs ${PWD}/vim/ftdetect/*            ~/.vim/ftdetect/
+ln    -vfs ${PWD}/vim/ftplugin/*            ~/.vim/ftplugin/
 ln    -vfs ${PWD}/vim/syntax/*              ~/.vim/syntax/
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
