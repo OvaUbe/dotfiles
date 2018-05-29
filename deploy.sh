@@ -43,6 +43,7 @@ fi
 ln    -vfs ${PWD}/shell/.zshrc              ~/.zshrc
 ln    -vfs ${PWD}/shell/.profile            ~/.profile
 
+# Todo: Also add root config
 mkdir -vp  ~/.vim/colors/
 mkdir -vp  ~/.vim/ftdetect/
 mkdir -vp  ~/.vim/syntax/
@@ -51,10 +52,6 @@ ln    -vfs ${PWD}/vim/colors/*              ~/.vim/colors/
 ln    -vfs ${PWD}/vim/ftdetect/*            ~/.vim/ftdetect/
 ln    -vfs ${PWD}/vim/syntax/*              ~/.vim/syntax/
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-
-sudo mkdir -vp  /root/.vim/colors
-sudo ln    -vfs ${PWD}/vim/.vimrc           /root/.vimrc
-sudo ln    -vfs ${PWD}/vim/colors/*         /root/.vim/colors/
 
 ln    -vfs ${PWD}/xmobar/.xmobarrc          ~/.xmobarrc
 mkdir -v ~/.xmobar
