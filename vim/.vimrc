@@ -244,7 +244,7 @@ let g:airline_symbols.linenr = 'Ξ'
 
 
 " vim-commentary
-au FileType cpp.doxygen setlocal commentstring=//\ %s
+au FileType cpp.generalized setlocal commentstring=//\ %s
 au FileType octave setlocal commentstring=#\ %s
 xmap <leader>c  <Plug>Commentary
 nmap <leader>c  <Plug>Commentary
@@ -254,8 +254,8 @@ nmap <leader>cu <Plug>Commentary<Plug>Commentary
 
 
 " vim-clang-format
-au FileType cpp.doxygen nnoremap <buffer> <Leader>mf :<C-u>ClangFormat<CR>
-au FileType cpp.doxygen vnoremap <buffer> <Leader>mf :ClangFormat<CR>
+au FileType cpp.generalized nnoremap <buffer> <Leader>mf :<C-u>ClangFormat<CR>
+au FileType cpp.generalized vnoremap <buffer> <Leader>mf :ClangFormat<CR>
 let g:clang_format#detect_style_file = 1
 
 
@@ -266,7 +266,7 @@ nnoremap <Leader>gd :Gvdiff<CR>
 
 " vim-rtags
 let g:rtagsMinCharsForCommandCompletion = 1
-au FileType cpp.doxygen setlocal omnifunc=RtagsCompleteFunc
+au FileType cpp.generalized setlocal omnifunc=RtagsCompleteFunc
 
 
 " yapf
