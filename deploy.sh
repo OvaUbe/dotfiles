@@ -100,4 +100,8 @@ sudo systemctl enable NetworkManager
 # Ad-hoc for broken debian sddm service
 sudo ln -vfs /lib/systemd/system/sddm.service /etc/systemd/system/
 
+mkdir -pv  ~/.config/systemd/user
+sudo ln    -vfs ${PWD}/systemd/* ~/.config/systemd/user/
+mkdir -pv  ~/.rdm
+
 mkdir -v ~/.global-state
