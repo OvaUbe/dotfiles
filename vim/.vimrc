@@ -123,6 +123,7 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
 Plug 'majutsushi/tagbar'
 Plug 'google/yapf', { 'rtp': 'plugins/vim', 'for': 'python' }
+Plug 'tpope/vim-dispatch'
 
 call plug#end()
 
@@ -135,7 +136,7 @@ nmap <C-M><C-M> :A<CR>
 if executable('rg')
 	let g:ackprg = 'rg --vimgrep --no-heading'
 endif
-let g:ack_use_dispatch = 1
+let g:ack_use_dispatch = 0
 nnoremap <leader>s :Ack -w <C-r><C-w><CR>
 
 
