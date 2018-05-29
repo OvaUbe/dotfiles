@@ -74,9 +74,10 @@ set listchars=tab:>-,trail:~,extends:>,precedes:<
 " Note
 set completeopt=menuone,noselect
 
-let g:column_highlight = 1
-let g:column_number_highlight = 72
+let g:column_highlight = 0
+let g:column_number_highlight = 120
 nmap <C-B><C-B> :call ToggleColumnHighlight()<CR>
+call ToggleColumnHighlight()
 
 nnoremap j gj
 nnoremap k gk
