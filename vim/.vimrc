@@ -26,6 +26,11 @@ function! ToggleColumnHighlight()
     endif
 endfunction
 
+function! s:cr_for_popup()
+    return pumvisible() ? "\<C-y>" : "\<CR>"
+endfunction
+
+
 set wm=0
 set nowrap
 
@@ -69,15 +74,6 @@ set listchars=tab:>-,trail:~,extends:>,precedes:<
 " Note
 set completeopt=menuone,noselect
 
-" Todo: Move to ftdetect
-au BufRead,BufNewFile *.c,*.cpp,*.cxx,*.h,*.hpp,*.hxx set filetype=cpp.doxygen
-au BufRead,BufNewFile *.qml set filetype=qml
-au BufRead,BufNewFile *.tex set fenc=utf-8 ts=2 sw=2 sts=2 et fdm=indent foldlevel=20
-au FileType gitcommit set cc=72
-au FileType qf nnoremap <buffer> <C-T> <C-W><CR><C-W>T
-au FileType qf set cc=0
-au! Syntax qml source $HOME/.vim/syntax/qml.vim
-
 let g:column_highlight = 1
 let g:column_number_highlight = 72
 nmap <C-B><C-B> :call ToggleColumnHighlight()<CR>
@@ -98,10 +94,7 @@ nnoremap <leader>x :+tabmove<CR>
 
 inoremap <expr><C-n> pumvisible() ? '<C-n>' : '<C-X><C-U>'
 inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
-inoremap <silent><CR> <C-r>=<SID>my_cr_function()<CR>
-function! s:my_cr_function()
-	return pumvisible() ? "\<C-y>" : "\<CR>"
-endfunction
+inoremap <silent><CR> <C-r>=<SID>cr_for_popup()<CR>
 
 
 " VimPlug
