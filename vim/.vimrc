@@ -43,6 +43,7 @@ set laststatus=2
 set backspace=2
 
 set foldmethod=syntax
+set nofoldenable
 
 set background=dark
 colorscheme wombat256mod
