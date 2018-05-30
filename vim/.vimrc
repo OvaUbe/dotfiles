@@ -225,7 +225,7 @@ let g:airline_symbols.linenr = 'Ξ'
 
 
 " vim-commentary
-au FileType cpp.generalized setlocal commentstring=//\ %s
+au FileType cpp setlocal commentstring=//\ %s
 au FileType octave setlocal commentstring=#\ %s
 xmap <leader>c  <Plug>Commentary
 nmap <leader>c  <Plug>Commentary
@@ -241,7 +241,7 @@ nnoremap <Leader>gd :Gvdiff<CR>
 
 " vim-rtags
 let g:rtagsMinCharsForCommandCompletion = 1
-au FileType cpp.generalized setlocal omnifunc=RtagsCompleteFunc
+au FileType cpp setlocal omnifunc=RtagsCompleteFunc
 
 
 " yapf
