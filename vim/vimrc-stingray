@@ -1,6 +1,8 @@
 set noexpandtab
 
-set cc=160
+let g:column_number_highlight = 160
+call ToggleColumnHighlight()
+call ToggleColumnHighlight()
 
 autocmd Filetype cpp,python autocmd BufWritePre <buffer> %s/\s\+$//e
 
