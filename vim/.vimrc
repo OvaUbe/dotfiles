@@ -110,7 +110,6 @@ Plug 'vim-syntastic/syntastic'
 Plug 'tpope/vim-abolish'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'rhysd/vim-clang-format'
 Plug 'tpope/vim-commentary'
 Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'easymotion/vim-easymotion'
@@ -249,12 +248,6 @@ nmap <leader>c  <Plug>Commentary
 omap <leader>c  <Plug>Commentary
 nmap <leader>cc <Plug>CommentaryLine
 nmap <leader>cu <Plug>Commentary<Plug>Commentary
-
-
-" vim-clang-format
-au FileType cpp.generalized nnoremap <buffer> <Leader>mf :<C-u>ClangFormat<CR>
-au FileType cpp.generalized vnoremap <buffer> <Leader>mf :ClangFormat<CR>
-let g:clang_format#detect_style_file = 1
 
 
 " vim-fugitive
