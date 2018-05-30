@@ -68,7 +68,7 @@ URxvt*reverseVideo: false
 ! URxvt*borderColor: colour
 
 ! Select the fonts to be used. This is a comma separated list of font names that are checked in order when trying to
-URxvt*font: xft:fira mono:size=10
+URxvt*font: xft:terminus:size=10
 
 ! URxvt*boldFont: fontlist
 
