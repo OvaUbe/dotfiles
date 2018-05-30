@@ -106,7 +106,6 @@ Plug 'junegunn/fzf.vim'
 Plug 'davidhalter/jedi-vim'
 Plug 'scrooloose/nerdtree'
 Plug 'Shougo/neocomplete.vim'
-Plug 'vim-syntastic/syntastic'
 Plug 'tpope/vim-abolish'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -121,6 +120,7 @@ Plug 'tpope/vim-unimpaired'
 Plug 'majutsushi/tagbar'
 Plug 'google/yapf', { 'rtp': 'plugins/vim', 'for': 'python' }
 Plug 'tpope/vim-dispatch'
+Plug 'w0rp/ale'
 
 call plug#end()
 
@@ -199,22 +199,6 @@ let g:neocomplete#delimiter_patterns.cpp = ['::', '.', '->']
 inoremap <expr><C-g> neocomplete#undo_completion()
 
 
-" syntastic
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-let g:syntastic_always_populate_loc_list = 0
-let g:syntastic_auto_loc_list = 0
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-
-let g:syntastic_python_checkers = ['flake8']
-
-nnoremap <Leader>mc :SyntasticCheck<CR>
-nnoremap <Leader>me :Errors<CR>
-
-
 " Tagbar
 let g:tagbar_left = 1
 let g:tagbar_sort = 0
@@ -262,3 +246,9 @@ au FileType cpp.generalized setlocal omnifunc=RtagsCompleteFunc
 
 " yapf
 au FileType python nnoremap <buffer> <leader>mf :call yapf#YAPF()<cr>
+
+
+" ale
+let g:ale_lint_on_save = 1
+let g:ale_lint_on_text_changed = 0
+let g:ale_sign_column_always = 1
