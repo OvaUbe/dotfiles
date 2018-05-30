@@ -46,8 +46,8 @@ ln    -vfs ${PWD}/shell/.profile            ~/.profile
 # Todo: Also add root config
 mkdir -vp  ~/.vim/colors/
 mkdir -vp  ~/.vim/ftdetect/
-mkdir -vp  ~/.vim/syntax/
 mkdir -vp  ~/.vim/ftplugin/
+mkdir -vp  ~/.vim/syntax/
 ln    -vfs ${PWD}/vim/.vimrc                ~/.vimrc
 ln    -vfs ${PWD}/vim/colors/*              ~/.vim/colors/
 ln    -vfs ${PWD}/vim/ftdetect/*            ~/.vim/ftdetect/
