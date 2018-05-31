@@ -72,6 +72,8 @@ set undoreload=10000
 set list
 set listchars=tab:>-,trail:~,extends:>,precedes:<
 
+set completeopt=menuone,noselect
+
 let g:column_highlight = 0
 let g:column_number_highlight = 120
 nmap <C-B><C-B> :call ToggleColumnHighlight()<CR>
