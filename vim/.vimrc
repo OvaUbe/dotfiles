@@ -117,7 +117,6 @@ Plug 'kana/vim-operator-user'
 Plug 'lyuts/vim-rtags'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
-Plug 'google/yapf', { 'rtp': 'plugins/vim', 'for': 'python' }
 Plug 'tpope/vim-dispatch'
 Plug 'w0rp/ale'
 
