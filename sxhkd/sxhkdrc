@@ -14,10 +14,6 @@ super + {F2,F3}
 Print + {_,super,super + shift}
 	scrot {_,-u,-s} -z -e 'mv $f ~/scrots/'
 
-# Screen capture
-super + v
-	screencapture.sh
-
 # terminal emulator
 super + Return
 	urxvt

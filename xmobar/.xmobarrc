@@ -12,7 +12,7 @@ Config {
    , sepChar =  "%"   -- delineator between plugin names and straight text
    , alignSep = "}{"  -- separator between left-right alignment
 
-   , template = "| %kbd% | %date% | %vol% | %battery% | %screencapture% | %windowmanager% }{"
+   , template = "| %kbd% | %date% | %vol% | %battery% | %windowmanager% }{"
 
    -- general behavior
    , lowerOnStart =     True    -- send to bottom of window stack on start
@@ -30,7 +30,6 @@ Config {
             Run CommandReader "~/.xmobar/status-date.sh" "date",
             Run CommandReader "~/.xmobar/status-volume.sh" "vol",
             Run CommandReader "~/.xmobar/status-battery.sh" "battery",
-            Run CommandReader "~/.xmobar/status-screencapture.sh" "screencapture",
             Run CommandReader "~/.xmobar/status-windowmanager.sh" "windowmanager"
         ]
    }
