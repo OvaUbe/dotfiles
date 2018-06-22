@@ -69,6 +69,9 @@ mkdir -v   ~/.config/
 ln    -vfs ${PWD}/bspwm                     ~/.config/
 ln    -vfs ${PWD}/sxhkd                     ~/.config/
 
+chmod +x ${PWD}/multihead/*
+ln    -vfs ${PWD}/multihead                 ~/.config/
+
 ln    -vfs ${PWD}/look/.icons               ~/.icons
 ln    -vfs ${PWD}/look/.themes              ~/.themes
 ln    -vfs ${PWD}/look/.gtkrc-2.0           ~/.gtkrc-2.0
