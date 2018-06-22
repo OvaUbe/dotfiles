@@ -13,8 +13,8 @@ bspc config gapless_monocle      	true
 bspc config focus_follows_pointer 	true
 bspc config external_rules_command  ~/.config/bspwm/get-split-direction.sh
 
-~/.config/multihead/xrandr-multihead.sh
-~/.config/multihead/bspwm-multihead.sh
+~/.config/multihead/setup-xrandr-multihead.sh
+~/.config/multihead/setup-bspwm-multihead.sh
 
 xmobar &
 sxhkd &
