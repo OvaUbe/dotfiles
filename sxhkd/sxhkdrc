@@ -3,7 +3,7 @@
 #
 
 # Brightness control
-super + {F5,F6}
+super + {F10,F11}
 	backlight.sh -a {-,+}3
 
 # Volume control
