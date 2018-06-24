@@ -4,7 +4,6 @@ rxvt-unicode-256color
 alsa-utils
 feh
 sshfs
-sddm
 sxhkd
 bspwm
 xmobar
