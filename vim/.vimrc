@@ -118,5 +118,6 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-dispatch'
 Plug 'w0rp/ale'
+Plug 'terryma/vim-smooth-scroll'
 
 call plug#end()
