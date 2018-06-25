@@ -35,7 +35,7 @@ URxvt*highlightColor: #E82C0C
 ! URxvt*highlightTextColor: colour
 
 ! Use the specified colour for the cursor. The default is to use the foreground colour; option -cr.
-URxvt*cursorColor: #5F5F5F
+URxvt*cursorColor: #F3F3F3
 
 ! Use the specified colour for the colour of the cursor text. For this to take effect, cursorColor must also be
 ! URxvt*cursorColor2: colour
@@ -166,7 +166,7 @@ URxvt*saveLines: 1000000
 ! URxvt*pastableTabs: boolean
 
 ! True: blink the cursor. False: do not blink the cursor [default]; option -bc.
-! URxvt*cursorBlink: boolean
+URxvt*cursorBlink: true
 
 ! True: Make the cursor underlined. False: Make the cursor a box [default]; option -uc.
 ! URxvt*cursorUnderline: boolean
