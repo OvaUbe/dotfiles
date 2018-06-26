@@ -75,8 +75,6 @@ ln    -vfs ${PWD}/look/.gtkrc-2.0           ~/.gtkrc-2.0
 ln    -vfs ${PWD}/look/.Xdefaults           ~/.Xdefaults
 ln    -vfs ${PWD}/look/.xinitrc             ~/.xinitrc
 
-ln    -vfs ${PWD}/look/Trolltech.conf       ~/.config/Trolltech.conf
-
 chmod +x   ${PWD}/scripts/*
 for script in ${PWD}/scripts/*; do
     sudo ln -vfs "$script" /bin/${script##*/}
