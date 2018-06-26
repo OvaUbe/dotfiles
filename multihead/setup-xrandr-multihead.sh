@@ -2,4 +2,4 @@
 
 . ~/.config/multihead/config
 
-xrandr --output ${builtin_monitor} --left-of ${external_monitor}
+xrandr --output ${builtin_monitor} --below ${external_monitor}
