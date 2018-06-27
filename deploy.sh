@@ -85,6 +85,7 @@ mkdir -v ~/scrots
 
 sudo mkdir -pv  /etc/X11/xorg.conf.d
 sudo ln    -vfs ${PWD}/X11/*                /etc/X11/xorg.conf.d/
+sudo ln    -vfs ${PWD}/X11/.xinitrc         ~/.xinitrc
 
 sudo ln    -vfs ${PWD}/apt/apt.conf.d/*     /etc/apt/apt.conf.d/
 
