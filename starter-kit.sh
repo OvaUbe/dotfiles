@@ -12,3 +12,7 @@ cd rtags
 cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=1 .
 make
 sudo make install
+
+for package in ${PWD}/deb/*; do
+    sudo dpkg -i ${package}
+done
