@@ -85,10 +85,6 @@ for script in ${PWD}/scripts/*; do
     sudo chown -v `whoami` /bin/${script##*/}
 done
 
-sudo mkdir -pv  /usr/share/sddm/themes
-sudo ln    -vfs ${PWD}/sddm/sddm.conf       /etc/sddm.conf
-sudo cp    -rfv ${PWD}/sddm/themes/*        /usr/share/sddm/themes/
-
 mkdir -v ~/scrots
 
 sudo mkdir -pv  /etc/X11/xorg.conf.d
@@ -103,8 +99,6 @@ sudo udevadm control --reload-rules
 sudo cp -vf ${PWD}/systemd/system/* /lib/systemd/system/
 sudo systemctl enable backlight-workaround
 sudo systemctl enable NetworkManager
-# Ad-hoc for broken debian sddm service
-sudo ln -vfs /lib/systemd/system/sddm.service /etc/systemd/system/
 
 mkdir -pv  ~/.config/systemd/user
 sudo ln    -vfs ${PWD}/systemd/* ~/.config/systemd/user/
