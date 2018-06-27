@@ -1,5 +1,4 @@
 - /etc/sysctl.conf contains ipv6 privacy rules
-- .xinitrc
 - rg setup
 - wmtools setuo
 - dock station setup
