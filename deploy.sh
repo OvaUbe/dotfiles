@@ -41,6 +41,8 @@ if ! [ -z ${shell+x} ]; then
 fi
 
 ln    -vfs ${PWD}/shell/.zshrc              ~/.zshrc
+ln    -vfs ${PWD}/shell/.zsh-custom         ~/.zsh-custom
+
 ln    -vfs ${PWD}/shell/.profile            ~/.profile
 
 # Todo: Also add root config

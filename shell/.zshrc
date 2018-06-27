@@ -1,6 +1,7 @@
 export ZSH=$HOME/.oh-my-zsh
-ZSH_THEME="af-magic"
-plugins=(git github nyan)
+export ZSH_CUSTOM=$HOME/.zsh-custom
+ZSH_THEME="af-magic-with-mercurial"
+plugins=(git github mercurial nyan)
 . /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source $ZSH/oh-my-zsh.sh
 
