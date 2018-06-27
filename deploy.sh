@@ -41,22 +41,17 @@ if ! [ -z ${shell+x} ]; then
 fi
 
 ln    -vfs ${PWD}/shell/.zshrc              ~/.zshrc
-ln    -vfs ${PWD}/shell/.zsh-custom         ~/.zsh-custom
+ln    -vfs ${PWD}/shell/.zsh-custom         ~/
 
 ln    -vfs ${PWD}/shell/.profile            ~/.profile
 
 # Todo: Also add root config
-mkdir -vp  ~/.vim/colors/
-mkdir -vp  ~/.vim/ftdetect/
-mkdir -vp  ~/.vim/ftplugin/
-mkdir -vp  ~/.vim/plugin/
-mkdir -vp  ~/.vim/syntax/
 ln    -vfs ${PWD}/vim/.vimrc                ~/.vimrc
-ln    -vfs ${PWD}/vim/colors/*              ~/.vim/colors/
-ln    -vfs ${PWD}/vim/ftdetect/*            ~/.vim/ftdetect/
-ln    -vfs ${PWD}/vim/ftplugin/*            ~/.vim/ftplugin/
-ln    -vfs ${PWD}/vim/plugin/*              ~/.vim/plugin/
-ln    -vfs ${PWD}/vim/syntax/*              ~/.vim/syntax/
+ln    -vfs ${PWD}/vim/colors                ~/.vim/
+ln    -vfs ${PWD}/vim/ftdetect              ~/.vim/
+ln    -vfs ${PWD}/vim/ftplugin              ~/.vim/
+ln    -vfs ${PWD}/vim/plugin                ~/.vim/
+ln    -vfs ${PWD}/vim/syntax                ~/.vim/
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 ln    -vfs ${PWD}/xmobar/.xmobarrc          ~/.xmobarrc
