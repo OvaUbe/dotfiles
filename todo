@@ -1,6 +1,4 @@
 - /etc/sysctl.conf contains ipv6 privacy rules
-- rg setup
-- wmtools setuo
 - dock station setup
 - disable touchpad
 - vim8 backports
