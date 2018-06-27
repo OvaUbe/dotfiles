@@ -1,4 +1,4 @@
-#
+
 # wm independent hotkeys
 #
 
@@ -29,6 +29,9 @@ super + p
 # make sxhkd reload its configuration files:
 super + shift + r
 	pkill -USR1 -x sxhkd
+
+Scroll_Lock
+    xinput-toggle 11
 
 #
 # bspwm hotkeys
