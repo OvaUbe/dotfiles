@@ -26,8 +26,11 @@ super + p
 super + shift + r
 	pkill -USR1 -x sxhkd
 
-Scroll_Lock
+super + l
     gnome-screensaver-command -l
+
+Scroll_Lock
+    xinput-toggle 11
 
 #
 # bspwm hotkeys
