@@ -30,8 +30,8 @@ super + p
 super + shift + r
 	pkill -USR1 -x sxhkd
 
-Scroll_Lock
-    xinput-toggle 11
+super + grave
+    xinput-toggle 11 && xinput-toggle 12
 
 #
 # bspwm hotkeys
