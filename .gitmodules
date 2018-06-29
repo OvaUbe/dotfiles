@@ -1,0 +1,3 @@
+[submodule "debs"]
+	path = debs
+	url = git@github.com:subsinthe/debs.git
