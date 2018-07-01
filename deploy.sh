@@ -50,7 +50,6 @@ ln    -vfs ${PWD}/vim/ftdetect              ~/.vim/
 ln    -vfs ${PWD}/vim/ftplugin              ~/.vim/
 ln    -vfs ${PWD}/vim/plugin                ~/.vim/
 ln    -vfs ${PWD}/vim/syntax                ~/.vim/
-curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 ln    -vfs ${PWD}/xmobar/.xmobarrc          ~/.xmobarrc
 mkdir -v ~/.xmobar
