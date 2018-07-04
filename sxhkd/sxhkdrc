@@ -30,7 +30,7 @@ super + l
     gnome-screensaver-command -l
 
 super + grave
-    xinput-toggle 11 && xinput-toggle 12
+    toggle-mouse.sh
 
 #
 # bspwm hotkeys
