@@ -100,3 +100,7 @@ sudo ln    -vfs ${PWD}/systemd/* ~/.config/systemd/user/
 mkdir -pv  ~/.rdm
 
 mkdir -v ~/.global-state
+
+sudo chown $(whoami) -R /mnt
+mkdir -pv /mnt/banach
+mkdir -pv /mnt/freud
