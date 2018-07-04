@@ -31,7 +31,7 @@ super + shift + r
 	pkill -USR1 -x sxhkd
 
 super + grave
-    xinput-toggle 11 && xinput-toggle 12
+    toggle-mouse.sh
 
 #
 # bspwm hotkeys
