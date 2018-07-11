@@ -14,3 +14,5 @@ alias cp='cp -v'
 alias mv='mv -v'
 alias rm='rm -v'
 alias mkdir='mkdir -pv'
+
+autoload bashcompinit && bashcompinit && . /etc/bash_completion.d/yt_completion
