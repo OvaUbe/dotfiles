@@ -4,7 +4,7 @@ mouse_fifo=$(cat ~/.global-state/MOUSE_STATUS_FIFO)
 
 format() {
     if [[ $1 == "1" ]]; then
-        echo "<fc=#781A0F>mouse on</fc>"
+        echo "<fc=#428842>mouse on</fc>"
     else
         echo "<fc=#781A0F>mouse off</fc>"
     fi
