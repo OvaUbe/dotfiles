@@ -16,3 +16,5 @@ alias rm='rm -v'
 alias mkdir='mkdir -pv'
 
 autoload bashcompinit && bashcompinit && . /etc/bash_completion.d/yt_completion
+
+source /home/vvgolubev/.yql/shell_completion
