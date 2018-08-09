@@ -87,6 +87,8 @@ vmap <C-c> "+y
 vmap <C-v> c<ESC>"+p
 imap <C-v> <ESC>"+pa
 
+nnoremap <C-r><C-r> :e %<CR>
+
 inoremap <expr><C-n> pumvisible() ? '<C-n>' : '<C-X><C-U>'
 inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
 inoremap <silent><CR> <C-r>=<SID>cr_for_popup()<CR>
