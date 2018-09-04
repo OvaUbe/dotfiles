@@ -31,7 +31,12 @@ endfunction
 
 
 set wm=0
+set tw=0
 set nowrap
+
+set noswapfile
+set nobackup
+set nowritebackup
 
 set showmatch
 set hlsearch
