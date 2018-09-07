@@ -10,6 +10,7 @@ ln    -vfs ${PWD}/shell/.zsh-custom         ~/
 ln    -vfs ${PWD}/shell/.profile            ~/.profile
 
 # Todo: Also add root config
+mkdir -pv ~/.vim
 ln    -vfs ${PWD}/vim/.vimrc                ~/.vimrc
 ln    -vfs ${PWD}/vim/colors                ~/.vim/
 ln    -vfs ${PWD}/vim/ftdetect              ~/.vim/
