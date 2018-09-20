@@ -34,6 +34,8 @@ set wm=0
 set tw=0
 set nowrap
 
+set clipboard+=unnamed
+
 set noswapfile
 set nobackup
 set nowritebackup
