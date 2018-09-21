@@ -10,6 +10,7 @@ export PATH="${HOME}/usr/bin:$PATH"
 export EDITOR=vim
 export TERM=xterm-256color
 export YT_LOG_LEVEL=INFO
+export LD_LIBRARY_PATH="${HOME}/usr/lib:${LD_LIBRARY_PATH}"
 
 alias cp='cp -v'
 alias mv='mv -v'
