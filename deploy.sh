@@ -9,6 +9,8 @@ ln    -vfs ${PWD}/shell/.zsh-custom         ~/
 
 ln    -vfs ${PWD}/shell/.profile            ~/.profile
 
+ln    -vfs ${PWD}/tmux/.tmux.conf           ~/.tmux.conf
+
 # Todo: Also add root config
 mkdir -pv ~/.vim
 ln    -vfs ${PWD}/vim/.vimrc                ~/.vimrc
