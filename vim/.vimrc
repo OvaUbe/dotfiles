@@ -94,10 +94,8 @@ vmap <C-c> "+y
 vmap <C-v> c<ESC>"+p
 imap <C-v> <ESC>"+pa
 
-nnoremap <C-h> :tabprevious<CR>
-nnoremap <C-l> :tabnext<CR>
-nnoremap <leader>z :-tabmove<CR>
-nnoremap <leader>x :+tabmove<CR>
+nnoremap <C-r><C-r> :e %<CR>
+nnoremap <C-r><C-r><C-r> :e! %<CR>
 
 inoremap <expr><C-n> pumvisible() ? '<C-n>' : '<C-X><C-U>'
 inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
