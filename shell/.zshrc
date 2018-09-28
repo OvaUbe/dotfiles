@@ -6,7 +6,7 @@ plugins=(git github nyan)
 source $ZSH/oh-my-zsh.sh
 
 export XDG_CONFIG_HOME="$HOME/.config"
-export PATH="${HOME}/usr/bin:$PATH"
+export PATH="${HOME}/usr/bin:/opt/python2.7/bin:/opt/pypy/bin:/opt/python3.6/bin:/opt/python3.7/bin:/opt/pypy3/bin:/opt/protobuf/bin:$PATH"
 export EDITOR=vim
 export TERM=xterm-256color
 export YT_LOG_LEVEL=INFO
