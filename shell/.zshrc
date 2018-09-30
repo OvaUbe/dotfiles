@@ -8,6 +8,7 @@ source $ZSH/oh-my-zsh.sh
 export XDG_CONFIG_HOME="$HOME/.config"
 export PATH="/usr/local/bin:$PATH"
 export PATH="/media/dev/arcadia:$PATH"
+export PATH="/snap/bin:$PATH"
 export EDITOR=vim
 export YT_LOG_LEVEL=INFO
 
