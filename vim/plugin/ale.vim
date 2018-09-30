@@ -6,3 +6,4 @@ let g:ale_list_window_size = 5
 let g:ale_completion_enabled = 1
 
 nmap <C-F><C-F> :ALEFix<CR>
+nmap <C-G><C-G> :ALEGoToDefinition<CR>
