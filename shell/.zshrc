@@ -6,6 +6,7 @@ source $ZSH/oh-my-zsh.sh
 
 export XDG_CONFIG_HOME="$HOME/.config"
 export PATH="/usr/local/bin:$PATH"
+export PATH="/snap/bin:$PATH"
 export EDITOR=vim
 
 alias cp='cp -v'
