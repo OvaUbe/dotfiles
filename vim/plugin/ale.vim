@@ -4,3 +4,4 @@ let g:ale_sign_column_always = 1
 let g:ale_completion_enabled = 1
 
 nmap <C-F><C-F> :ALEFix<CR>
+nmap <C-G><C-G> :ALEGoToDefinition<CR>
