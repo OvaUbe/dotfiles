@@ -1,0 +1,8 @@
+#!/bin/bash
+
+path="${PWD}"
+while [[ $path != / ]];
+do
+    find "$path" -maxdepth 1 -mindepth 1 "$@"
+    path="$(readlink -f "$path"/..)"
+done
