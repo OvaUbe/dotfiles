@@ -1,13 +1,13 @@
-language: shell
-
 sudo: required
+
+language: shell
 
 services:
     - docker
 
 script: |
     docker run --rm -it -v ${TRAVIS_BUILD_DIR}:/dotfiles.git -w /dotfiles.git launcher.gcr.io/google/debian9:latest /bin/bash -c '
-    ./deploy.sh'
+    ./deploy.sh -i -s zsh'
 
 branches:
     only:
