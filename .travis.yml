@@ -1,0 +1,15 @@
+language: shell
+
+sudo: required
+
+services:
+    - docker
+
+script: |
+    docker run --rm -it -v ${TRAVIS_BUILD_DIR}:/dotfiles.git launcher.gcr.io/google/debian9:latest /bin/bash -c '
+    ./deploy.sh'
+
+branches:
+    only:
+        - thinkpad
+        - work-dell
