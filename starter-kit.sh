@@ -5,7 +5,7 @@ sudo ln -vfs ${PWD}/apt/sources.list /etc/apt/sources.list
 
 sudo apt-get -y update
 sudo apt-get -y dist-upgrade
-DEBIAN_FRONTEND=noninteractive sudo apt-get install -y keyboard-configuration
+sudo dpkg-reconfigure keyboard-configuration --frontend=noninteractive
 sudo apt-get -y install `cat paclist` --force-yes
 
 PREV=$PWD
