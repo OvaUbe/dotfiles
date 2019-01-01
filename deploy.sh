@@ -101,6 +101,4 @@ mkdir -pv  ~/.rdm
 
 mkdir -v ~/.global-state
 
-sudo chown $(whoami) -R /mnt
-mkdir -pv /mnt/banach
-mkdir -pv /mnt/freud
+wget https://farm2.staticflickr.com/1891/29435493827_e1b89552dc_o_d.jpg -O ~/dotfiles/look/wallpaper
