@@ -1,5 +1,7 @@
 #!/bin/sh
 
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
+
 # Initial setup
 install_packages=false
 help="This is a custom deploy script for initial debian setup.\n"
@@ -96,4 +98,4 @@ mkdir -pv  ~/.rdm
 
 mkdir -v ~/.global-state
 
-wget https://farm2.staticflickr.com/1891/29435493827_e1b89552dc_o_d.jpg -O ~/dotfiles/look/wallpaper
+wget https://farm2.staticflickr.com/1891/29435493827_e1b89552dc_o_d.jpg -O ${DIR}/look/wallpaper
