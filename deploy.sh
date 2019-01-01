@@ -95,3 +95,5 @@ sudo ln    -vfs ${PWD}/systemd/* ~/.config/systemd/user/
 mkdir -pv  ~/.rdm
 
 mkdir -v ~/.global-state
+
+wget https://farm2.staticflickr.com/1891/29435493827_e1b89552dc_o_d.jpg -O ~/dotfiles/look/wallpaper
