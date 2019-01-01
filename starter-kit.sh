@@ -3,6 +3,7 @@
 sudo mv -vf  /etc/apt/sources.list /etc/apt/sources.list~
 sudo ln -vfs ${PWD}/apt/sources.list /etc/apt/sources.list
 
+export DEBIAN_FRONTEND=noninteractive
 sudo apt-get -y update
 sudo apt-get -y dist-upgrade
 sudo apt-get -y install `cat paclist` --force-yes
