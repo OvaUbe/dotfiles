@@ -5,7 +5,7 @@ sudo ln -vfs ${PWD}/apt/sources.list /etc/apt/sources.list
 
 sudo apt-get update
 sudo apt-get dist-upgrade
-sudo apt-get install `cat paclist` --force-yes
+sudo apt-get -y install `cat paclist` --force-yes
 
 PREV=$PWD
 cd ~/
