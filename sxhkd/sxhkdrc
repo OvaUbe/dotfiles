@@ -27,7 +27,7 @@ super + shift + r
 	pkill -USR1 -x sxhkd
 
 super + l
-    gnome-screensaver-command -l
+    i3lock-fancy
 
 super + grave
     toggle-mouse.sh
