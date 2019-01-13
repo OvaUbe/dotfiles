@@ -16,3 +16,5 @@ alias mkdir='mkdir -pv'
 
 # added by travis gem
 [ -f /home/ovaube/.travis/travis.sh ] && source /home/ovaube/.travis/travis.sh
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
