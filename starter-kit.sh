@@ -2,6 +2,9 @@
 
 sudo mv -vf  /etc/apt/sources.list /etc/apt/sources.list~
 sudo ln -vfs ${PWD}/apt/sources.list /etc/apt/sources.list
+for list in ${PWD}/apt/sources.list.d/*; do
+    ln -vfs "$list" /etc/apt/sources.list.d/${list##*/}
+done
 
 sudo apt-get -y update
 sudo apt-get -y dist-upgrade
