@@ -6,6 +6,9 @@ for list in ${PWD}/apt/sources.list.d/*; do
     ln -vfs "$list" /etc/apt/sources.list.d/${list##*/}
 done
 
+wget http://84.201.137.33/debian/key -O- | sudo apt-key add -
+wget http://repo.yandex.ru/yandex-disk/YANDEX-DISK-KEY.GPG -O- | sudo apt-key add -
+
 sudo apt-get -y update
 sudo apt-get -y dist-upgrade
 DEBIAN_FRONTEND=noninteractive apt-get install -y keyboard-configuration
