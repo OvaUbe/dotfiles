@@ -93,6 +93,7 @@ vmap <C-v> c<ESC>"+p
 imap <C-v> <ESC>"+pa
 
 nnoremap <C-r><C-r> :e %<CR>
+nnoremap <C-r><C-r><C-r> :e! %<CR>
 
 inoremap <expr><C-n> pumvisible() ? '<C-n>' : '<C-X><C-U>'
 inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
