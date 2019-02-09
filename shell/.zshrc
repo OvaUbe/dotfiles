@@ -20,3 +20,5 @@ alias mkdir='mkdir -pv'
 autoload bashcompinit && bashcompinit && . ${HOME}/usr/share/bash_completion.d/yt_completion
 
 source ${HOME}/.yql/shell_completion
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
