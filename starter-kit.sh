@@ -12,14 +12,8 @@ DEBIAN_FRONTEND=noninteractive apt-get install -y keyboard-configuration
 sudo apt-get -y install `cat paclist` --force-yes
 
 PREV=$PWD
-PREV_SHELL=$SHELL
-
 cd ~/
-export SHELL=/usr/bin/zsh
-
-sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
-
-export SHELL=$PREV_SHELL
+zsh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
 cd $PREV
 
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
