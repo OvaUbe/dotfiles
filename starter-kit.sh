@@ -15,11 +15,11 @@ PREV=$PWD
 PREV_SHELL=$SHELL
 
 cd ~/
-SHELL=zsh
+export SHELL=/usr/bin/zsh
 
 sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
 
-SHELL=$PREV_SHELL
+export SHELL=$PREV_SHELL
 cd $PREV
 
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
