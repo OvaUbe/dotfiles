@@ -101,6 +101,11 @@ inoremap <expr><C-n> pumvisible() ? '<C-n>' : '<C-X><C-U>'
 inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
 inoremap <silent><CR> <C-r>=<SID>cr_for_popup()<CR>
 
+noremap <Up> <nop>
+noremap <Down> <nop>
+noremap <Left> <nop>
+noremap <Right> <nop>
+
 call plug#begin('~/.vim/plugged')
 
 Plug 'vim-scripts/a.vim'
