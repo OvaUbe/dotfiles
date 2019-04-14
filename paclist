@@ -18,3 +18,6 @@ fonts-fira
 xwinwrap
 firmware-iwlwifi
 scrot
+unclutter
+fzf
+ripgrep
