@@ -3,7 +3,7 @@ rxvt-unicode-256color
 feh
 sshfs
 xmobar
-chromium-browser
+chromium
 trayer
 screenfetch
 ntfs-3g
@@ -11,3 +11,10 @@ suckless-tools
 zsh zsh-syntax-highlighting
 acpi
 i3lock-fancy
+xserver-xorg-xinput-synaptics
+wmutils
+telegram
+fonts-fira
+xwinwrap
+firmware-iwlwifi
+scrot
