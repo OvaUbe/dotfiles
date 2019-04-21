@@ -3,7 +3,6 @@ rxvt-unicode-256color
 feh
 sshfs
 xmobar
-chromium
 trayer
 screenfetch
 ntfs-3g
@@ -21,3 +20,4 @@ scrot
 unclutter
 fzf
 ripgrep
+firefox
