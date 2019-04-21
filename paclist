@@ -8,7 +8,6 @@ sxhkd
 bspwm
 xmobar
 tmux
-chromium
 network-manager-gnome
 trayer
 deluge
@@ -31,3 +30,4 @@ telegram
 xwinwrap
 fonts-fira
 wmutils
+firefox
