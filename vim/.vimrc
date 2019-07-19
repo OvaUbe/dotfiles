@@ -127,5 +127,8 @@ Plug 'xolox/vim-session'
 Plug 'xolox/vim-misc'
 Plug 'udalov/kotlin-vim'
 Plug 'cespare/vim-toml'
+Plug 'kkoomen/vim-doge'
 
 call plug#end()
+
+filetype plugin indent off
