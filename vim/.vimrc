@@ -130,6 +130,7 @@ Plug 'w0rp/ale'
 Plug 'terryma/vim-smooth-scroll'
 Plug 'xolox/vim-session'
 Plug 'xolox/vim-misc'
+Plug 'kkoomen/vim-doge'
 
 call plug#end()
 
