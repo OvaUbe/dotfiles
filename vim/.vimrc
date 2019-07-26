@@ -128,6 +128,7 @@ Plug 'xolox/vim-misc'
 Plug 'udalov/kotlin-vim'
 Plug 'cespare/vim-toml'
 Plug 'kkoomen/vim-doge'
+Plug 'cespare/vim-toml'
 
 call plug#end()
 
