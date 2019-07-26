@@ -131,6 +131,7 @@ Plug 'terryma/vim-smooth-scroll'
 Plug 'xolox/vim-session'
 Plug 'xolox/vim-misc'
 Plug 'kkoomen/vim-doge'
+Plug 'cespare/vim-toml'
 
 call plug#end()
 
