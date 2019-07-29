@@ -102,5 +102,3 @@ Plug 'xolox/vim-session'
 Plug 'xolox/vim-misc'
 
 call plug#end()
-
-filetype plugin indent off
