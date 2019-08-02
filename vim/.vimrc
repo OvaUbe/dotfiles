@@ -1,9 +1,5 @@
 runtime! before/*.vim
 
-function! s:cr_for_popup()
-    return pumvisible() ? "\<C-y>" : "\<CR>"
-endfunction
-
 set wm=0
 set tw=0
 set nowrap
@@ -70,10 +66,6 @@ imap <C-v> <ESC>"+pa
 
 nnoremap <C-r><C-r> :e %<CR>
 nnoremap <C-r><C-r><C-r> :e! %<CR>
-
-inoremap <expr><C-n> pumvisible() ? '<C-n>' : '<C-X><C-U>'
-inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
-inoremap <silent><CR> <C-r>=<SID>cr_for_popup()<CR>
 
 call plug#begin('~/.vim/plugged')
 
