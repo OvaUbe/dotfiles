@@ -41,7 +41,6 @@ if ! [ -z ${shell+x} ]; then
 fi
 
 ln    -vfs ${PWD}/shell/.zshrc              ~/.zshrc
-ln    -vfs ${PWD}/shell/.zsh-custom         ~/
 
 ln    -vfs ${PWD}/shell/.profile            ~/.profile
 
