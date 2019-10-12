@@ -1,14 +1,13 @@
 function! PrettyCursor()
     if &term =~ 'xterm\|.*rxvt.*'
-        let cursor_color = "\033]12;white\x7"
-        let cursor_shape = "\033[1 q"
+        let &t_SI = "\<Esc>[6 q"
+        let &t_SR = "\<Esc>[4 q"
+        let &t_EI = "\<Esc>[2 q"
 
-        let &t_SI = cursor_color
-        let &t_EI = cursor_color
-
-        let insert_cursor_shape = "\033[5 q"
-
-        let &t_SI .= insert_cursor_shape
-        let &t_EI .= cursor_shape
+        if !empty($TMUX)
+            let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>[6 q\<Esc>\\"
+            let &t_SR = "\<Esc>Ptmux;\<Esc>\<Esc>[4 q\<Esc>\\"
+            let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>[2 q\<Esc>\\"
+        endif
     endif
 endfunction
