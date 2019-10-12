@@ -82,30 +82,24 @@ noremap <Right> <nop>
 
 call plug#begin('~/.vim/plugged')
 
-Plug 'vim-scripts/a.vim'
-Plug 'mileszs/ack.vim'
-Plug 'junegunn/fzf', { 'do': './install --bin' }
+Plug 'cespare/vim-toml'
+Plug 'davidhalter/jedi-vim'
+Plug 'easymotion/vim-easymotion'
 Plug 'junegunn/fzf.vim'
-Plug 'scrooloose/nerdtree'
-Plug 'tpope/vim-abolish'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'kkoomen/vim-doge'
+Plug 'mileszs/ack.vim'
+Plug 'octol/vim-cpp-enhanced-highlight'
+Plug 'terryma/vim-smooth-scroll'
+Plug 'tpope/vim-dispatch'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-fugitive'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'tpope/vim-commentary'
-Plug 'octol/vim-cpp-enhanced-highlight'
-Plug 'easymotion/vim-easymotion'
-Plug 'tpope/vim-fugitive'
-Plug 'jlfwong/vim-mercenary'
-Plug 'kana/vim-operator-user'
-Plug 'lyuts/vim-rtags'
-Plug 'tpope/vim-surround'
-Plug 'tpope/vim-unimpaired'
-Plug 'tpope/vim-dispatch'
+Plug 'vim-scripts/a.vim'
 Plug 'w0rp/ale'
-Plug 'terryma/vim-smooth-scroll'
 Plug 'xolox/vim-session'
 Plug 'xolox/vim-misc'
-Plug 'kkoomen/vim-doge'
-Plug 'cespare/vim-toml'
 
 call plug#end()
 
