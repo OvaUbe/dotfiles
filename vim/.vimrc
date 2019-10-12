@@ -21,8 +21,6 @@ set backspace=2
 set foldmethod=syntax
 set nofoldenable
 
-set background=dark
-colorscheme sierra
 call PrettyCursor()
 
 set shiftwidth=4
@@ -69,6 +67,7 @@ nnoremap <C-r><C-r><C-r> :e! %<CR>
 
 call plug#begin('~/.vim/plugged')
 
+Plug 'arcticicestudio/nord-vim'
 Plug 'cespare/vim-toml'
 Plug 'davidhalter/jedi-vim'
 Plug 'easymotion/vim-easymotion'
