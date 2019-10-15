@@ -1,1 +1,4 @@
-look/wallpaper
+local-configs/.vim/autoload
+local-configs/.vim/plugged
+local-configs/.vim/sessions
+wallpaper
