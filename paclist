@@ -24,11 +24,8 @@ gitk
 wget
 firmware-linux-nonfree
 firmware-realtek
+firmware-iwlwifi
 software-properties-common
 xserver-xorg-input-synaptics
-telegram
-xwinwrap
-fonts-fira
-wmutils
-firefox
+firefox-esr
 stow
