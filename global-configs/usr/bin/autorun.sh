@@ -6,4 +6,5 @@ create-status-fifo.sh mouse '1'
 feh --bg-fill ~/dotfiles/wallpaper
 nm-applet &
 xset b off &
-unclutter -idle 2 &
+unclutter -idle 0.8 &
+xrdb ~/.config/xrdb/nord

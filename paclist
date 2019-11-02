@@ -29,3 +29,6 @@ software-properties-common
 xserver-xorg-input-synaptics
 firefox-esr
 stow
+xserver-xorg-input-all
+xfonts-terminus
+curl
