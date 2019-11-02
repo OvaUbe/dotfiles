@@ -1,17 +1,8 @@
-deb http://mirror.mephi.ru/debian/ testing main contrib non-free
-deb-src http://mirror.mephi.ru/debian/ testing main contrib non-free
+deb http://deb.debian.org/debian buster main contrib non-free
+deb-src http://deb.debian.org/debian buster main contrib non-free
 
-deb http://security.debian.org/ testing/updates main contrib
-deb-src http://security.debian.org/ testing/updates main contrib
+deb http://deb.debian.org/debian-security/ buster/updates main contrib non-free
+deb-src http://deb.debian.org/debian-security/ buster/updates main contrib non-free
 
-deb http://mirror.mephi.ru/debian/ testing-updates main contrib
-deb-src http://mirror.mephi.ru/debian/ testing-updates main contrib
-
-deb http://mirror.mephi.ru/debian/ sid main contrib non-free
-deb-src http://mirror.mephi.ru/debian/ sid main contrib non-free
-
-#deb http://security.debian.org/ sid/updates main contrib
-#deb-src http://security.debian.org/ sid/updates main contrib
-
-#deb http://mirror.mephi.ru/debian/ sid-updates main contrib
-#deb-src http://mirror.mephi.ru/debian/ sid-updates main contrib
+deb http://deb.debian.org/debian buster-updates main contrib non-free
+deb-src http://deb.debian.org/debian buster-updates main contrib non-free
