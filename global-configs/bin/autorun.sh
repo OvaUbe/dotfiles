@@ -8,3 +8,4 @@ xinput-toggle.sh 12
 nm-applet &
 xset b off &
 unclutter -idle 2 &
+xrdb -merge ~/.config/xrdb/nord

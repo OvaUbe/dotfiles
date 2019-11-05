@@ -18,6 +18,7 @@ unclutter
 vim-athena
 wmutils
 xmobar
+xrdb
 xserver-xorg-xinput-synaptics
 xwinwrap
 zsh zsh-syntax-highlighting
