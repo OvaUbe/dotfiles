@@ -1,8 +1,8 @@
 #!/bin/sh
 
 sudo mv -vf  /etc/apt/sources.list /etc/apt/sources.list~
-sudo ln -vfs ${PWD}/apt/sources.list /etc/apt/sources.list
-for list in ${PWD}/apt/sources.list.d/*; do
+sudo ln -vfs ${PWD}/global-configs/etc/apt/sources.list /etc/apt/sources.list
+for list in ${PWD}/global-configs/etc/apt/sources.list.d/*; do
     sudo ln -vfs "$list" /etc/apt/sources.list.d/${list##*/}
 done
 
