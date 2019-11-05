@@ -1,0 +1,8 @@
+[Unit]
+Description=A workaround for backlight.sh to work.
+
+[Service]
+ExecStart=/bin/bash -c "/bin/chmod -v 777 /sys/class/backlight/*/brightness"
+
+[Install]
+WantedBy=multi-user.target
