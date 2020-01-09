@@ -5,6 +5,7 @@ plugins=(git github)
 source $ZSH/oh-my-zsh.sh
 
 export XDG_CONFIG_HOME="$HOME/.config"
+export SSH_AUTH_SOCK="${XDG_RUNTIME_DIR}/ssh-agent.socket"
 export PATH="/usr/local/bin:$PATH"
 export PATH="/media/dev/arcadia:$PATH"
 export PATH="/snap/bin:$PATH"
@@ -17,3 +18,5 @@ alias rm='rm -v'
 alias mkdir='mkdir -pv'
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+source /home/vvgolubev/.yql/shell_completion
