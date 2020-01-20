@@ -17,7 +17,8 @@ bspc config gapless_monocle      	true
 bspc config focus_follows_pointer 	true
 bspc config external_rules_command  ~/.config/bspwm/get-split-direction.sh
 
-bspc monitor -d d1 d2 d3 d4 d5 d6 d7 d8 d9 d0
+~/.config/multihead/setup-xrandr-multihead.sh
+~/.config/multihead/setup-bspwm-multihead.sh
 
 xmobar &
 sxhkd &
