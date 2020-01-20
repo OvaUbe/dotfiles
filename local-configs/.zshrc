@@ -1,7 +1,11 @@
 export ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="avit"
-plugins=(git github)
+plugins=(git github ssh-agent)
 . /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+zstyle :omz:plugins:ssh-agent agent-forwarding on
+zstyle :omz:plugins:ssh-agent identities id_rsa id_dsa.suslik-root id_rsa.suslik
+
 source $ZSH/oh-my-zsh.sh
 
 export XDG_CONFIG_HOME="$HOME/.config"
